@@ -313,6 +313,12 @@ def download_pretrained(
     target = ''
     if not cfg:
         return target
+    
+    # First try to find the file in local_dir if specified
+    if local_dir:
+        local_path = os.path.join(local_dir, filename)
+        if os.path.exists(local_path):
+            return local_path
 
     download_url = cfg.get('url', '')
     download_hf_hub = cfg.get('hf_hub', '')
