@@ -2,7 +2,6 @@ import types
 import zipfile
 
 import torch
-from insightface.utils.download import download_file
 from insightface.utils.storage import BASE_REPO_URL
 from torch import nn
 from torchvision import transforms
