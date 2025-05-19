@@ -2,7 +2,6 @@ import types
 import zipfile
 
 import torch
-from insightface.utils.storage import BASE_REPO_URL
 from torch import nn
 from torchvision import transforms
 from torchvision.transforms import functional
@@ -142,7 +141,7 @@ def download_insightface_model(sub_dir, name, force=False, root='~/.insightface'
         return dir_path
     print('download_path:', dir_path)
     zip_file_path = os.path.join(_root, sub_dir, name + '.zip')
-    model_url = "%s/%s.zip"%(BASE_REPO_URL, name)
+    model_url = "%s/%s.zip"%("https://github.com/deepinsight/insightface/releases/download/v0.7", name)
     download_file(model_url,
              path=zip_file_path,
              overwrite=True)
